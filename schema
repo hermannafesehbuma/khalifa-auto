@@ -1,0 +1,104 @@
+-- ===============================================
+-- CAR ECOMMERCE DATABASE SCHEMA (NO AUTH REQUIRED)
+-- UPDATED FOR MULTIPLE CAR IMAGES
+-- ===============================================
+
+-- 1️⃣ TABLE: categories
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL UNIQUE,
+  description TEXT
+);
+
+-- 2️⃣ TABLE: cars
+CREATE TABLE cars (
+  id SERIAL PRIMARY KEY,
+  category_id INT REFERENCES categories(id) ON DELETE SET NULL,
+  make TEXT NOT NULL,
+  model TEXT NOT NULL,
+  year INT CHECK (year >= 1886),
+  price NUMERIC(12,2) NOT NULL CHECK (price >= 0),
+  mileage INT,                     -- in miles
+  vin CHAR(17) UNIQUE NOT NULL,    -- Vehicle Identification Number
+  exterior_color TEXT,
+  interior_color TEXT,
+  drivetrain TEXT,                 -- e.g., AWD, FWD, RWD
+  engine TEXT,                     -- e.g., 2.0L Turbo I4
+  horsepower INT,
+  torque INT,
+  transmission TEXT,               -- Automatic, Manual, CVT
+  style TEXT,                       -- Sedan, SUV, Coupe, etc.
+  condition TEXT CHECK (condition IN ('New', 'Used')),
+  description TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- 3️⃣ TABLE: car_images (linked to cars)
+CREATE TABLE car_images (
+  id SERIAL PRIMARY KEY,
+  car_id INT NOT NULL REFERENCES cars(id) ON DELETE CASCADE,
+  image_url TEXT NOT NULL,
+  sort_order INT DEFAULT 0,       -- For ordering images (main image first)
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- 4️⃣ TABLE: car_history
+CREATE TABLE car_history (
+  id SERIAL PRIMARY KEY,
+  car_id INT REFERENCES cars(id) ON DELETE CASCADE,
+  accidents BOOLEAN DEFAULT FALSE,
+  previous_owners INT DEFAULT 0,
+  service_records INT DEFAULT 0
+);
+
+-- 5️⃣ TABLE: customers
+CREATE TABLE customers (
+  id SERIAL PRIMARY KEY,
+  full_name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
+  address TEXT
+);
+
+-- 6️⃣ TABLE: orders
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  customer_id INT REFERENCES customers(id) ON DELETE SET NULL,
+  order_date TIMESTAMP DEFAULT NOW(),
+  total_amount NUMERIC(12,2) NOT NULL,
+  status TEXT CHECK (status IN ('pending', 'paid', 'cancelled', 'completed')),
+  payment_id INT REFERENCES payments(id) ON DELETE SET NULL
+);
+
+-- 7️⃣ TABLE: order_items
+CREATE TABLE order_items (
+  id SERIAL PRIMARY KEY,
+  order_id INT REFERENCES orders(id) ON DELETE CASCADE,
+  car_id INT REFERENCES cars(id) ON DELETE CASCADE,
+  price NUMERIC(12,2) NOT NULL,
+  quantity INT DEFAULT 1
+);
+
+-- 8️⃣ TABLE: payments
+CREATE TABLE payments (
+  id SERIAL PRIMARY KEY,
+  order_id INT REFERENCES orders(id) ON DELETE CASCADE,
+  payment_method TEXT NOT NULL CHECK (
+    payment_method IN (
+      'BANK TRANSFER',
+      'ZELLE',
+      'APPLE PAY',
+      'CASHAPP',
+      'CREDIT CARD',
+      'CHIME'
+    )
+  ),
+  amount NUMERIC(12,2) NOT NULL CHECK (amount >= 0),
+  payment_status TEXT CHECK (payment_status IN ('pending', 'completed', 'failed', 'refunded')),
+  transaction_reference TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- ===============================================
+-- END OF UPDATED SCHEMA
+-- ===============================================
