@@ -14,7 +14,7 @@ export const emailTemplates = {
     message: string;
   }) => ({
     from: 'Khalifa Auto <noreply@khalifaautotrading.com>',
-    to: ['hermannafeseh13@gmail.com'],
+    to: ['contact@khalifaautotrading.com'],
     subject: `New Contact Form Submission: ${data.subject}`,
     html: `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
@@ -53,7 +53,7 @@ export const emailTemplates = {
           </p>
           <div style="margin-top: 15px;">
             <a href="tel:+9715083633902" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">📞 +9715083633902</a>
-            <a href="mailto:info@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ info@khalifaautotrading.com</a>
+            <a href="mailto:contact@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ contact@khalifaautotrading.com</a>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ export const emailTemplates = {
     additionalInfo: string;
   }) => ({
     from: 'Khalifa Auto <noreply@khalifaautotrading.com>',
-    to: ['hermannafeseh13@gmail.com'],
+    to: ['contact@khalifaautotrading.com'],
     subject: 'New Financing Application Submission',
     html: `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
@@ -144,7 +144,7 @@ export const emailTemplates = {
           </p>
           <div style="margin-top: 15px;">
             <a href="tel:+9715083633902" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">📞 +9715083633902</a>
-            <a href="mailto:info@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ info@khalifaautotrading.com</a>
+            <a href="mailto:contact@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ contact@khalifaautotrading.com</a>
           </div>
         </div>
       </div>
@@ -165,7 +165,7 @@ export const emailTemplates = {
     additionalInfo: string;
   }) => ({
     from: 'Khalifa Auto <noreply@khalifaautotrading.com>',
-    to: ['hermannafeseh13@gmail.com'],
+    to: ['contact@khalifaautotrading.com'],
     subject: 'New Trade-In Request',
     html: `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
@@ -239,7 +239,7 @@ export const emailTemplates = {
           </p>
           <div style="margin-top: 15px;">
             <a href="tel:+9715083633902" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">📞 +9715083633902</a>
-            <a href="mailto:info@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ info@khalifaautotrading.com</a>
+            <a href="mailto:contact@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ contact@khalifaautotrading.com</a>
           </div>
         </div>
       </div>
@@ -254,7 +254,7 @@ export const emailTemplates = {
     message: string;
   }) => ({
     from: 'Khalifa Auto <noreply@khalifaautotrading.com>',
-    to: ['hermannafeseh13@gmail.com'],
+    to: ['contact@khalifaautotrading.com'],
     subject: `Car Inquiry: ${data.carInfo}`,
     html: `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
@@ -293,7 +293,7 @@ export const emailTemplates = {
           </p>
           <div style="margin-top: 15px;">
             <a href="tel:+9715083633902" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">📞 +9715083633902</a>
-            <a href="mailto:info@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ info@khalifaautotrading.com</a>
+            <a href="mailto:contact@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ contact@khalifaautotrading.com</a>
           </div>
         </div>
       </div>
@@ -317,7 +317,7 @@ export const emailTemplates = {
     }>;
   }) => ({
     from: 'Khalifa Auto <noreply@khalifaautotrading.com>',
-    to: ['hermannafeseh13@gmail.com'],
+    to: ['contact@khalifaautotrading.com'],
     subject: `New Order #${data.orderId} - ${data.customerName}`,
     html: `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
@@ -394,7 +394,7 @@ export const emailTemplates = {
           </p>
           <div style="margin-top: 15px;">
             <a href="tel:+9715083633902" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">📞 +9715083633902</a>
-            <a href="mailto:info@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ info@khalifaautotrading.com</a>
+            <a href="mailto:contact@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500;">✉️ contact@khalifaautotrading.com</a>
           </div>
         </div>
       </div>
@@ -481,8 +481,8 @@ export const emailTemplates = {
           <h3 style="margin: 0 0 15px 0; color: #ffffff; font-size: 20px;">Questions?</h3>
           <p style="margin: 0 0 20px 0; color: #ffffff;">Contact us anytime for assistance</p>
           <div style="margin-top: 20px;">
-            <a href="tel:+15551234567" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 16px;">📞 (555) 123-4567</a>
-            <a href="mailto:info@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 16px;">✉️ info@khalifaautotrading.com</a>
+            <a href="tel:+9715083633902" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 16px;">📞 +9715083633902</a>
+            <a href="mailto:contact@khalifaautotrading.com" style="color: #F95738; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 16px;">✉️ contact@khalifaautotrading.com</a>
           </div>
           <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #1a4d7a;">
             <p style="margin: 0; font-size: 14px; color: #F95738; font-weight: 500;">

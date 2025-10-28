@@ -37,6 +37,10 @@ export default function Header() {
     }
   };
 
+  const handleMenuClose = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Top Bar */}
@@ -271,40 +275,46 @@ export default function Header() {
                     Khalifa Auto
                   </span>
                 </div>
-                <div className="flex flex-col space-y-4 mt-8">
+                <div className="flex flex-col space-y-2 mt-8">
                   <Link
                     href="/inventory"
-                    className="text-lg font-medium hover:text-primary"
+                    className="text-lg font-medium px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                    onClick={handleMenuClose}
                   >
                     Inventory
                   </Link>
                   <Link
                     href="/financing"
-                    className="text-lg font-medium hover:text-primary"
+                    className="text-lg font-medium px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                    onClick={handleMenuClose}
                   >
                     Financing
                   </Link>
                   <Link
                     href="/trade-in"
-                    className="text-lg font-medium hover:text-primary"
+                    className="text-lg font-medium px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                    onClick={handleMenuClose}
                   >
                     Trade-In Value
                   </Link>
                   <Link
                     href="/about"
-                    className="text-lg font-medium hover:text-primary"
+                    className="text-lg font-medium px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                    onClick={handleMenuClose}
                   >
                     About Us
                   </Link>
                   <Link
                     href="/contact"
-                    className="text-lg font-medium hover:text-primary"
+                    className="text-lg font-medium px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                    onClick={handleMenuClose}
                   >
                     Contact
                   </Link>
                   <Link
                     href="/cart"
-                    className="text-lg font-medium hover:text-primary flex items-center"
+                    className="text-lg font-medium flex items-center px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                    onClick={handleMenuClose}
                   >
                     <ShoppingCart className="h-5 w-5 mr-2" />
                     Cart
@@ -315,7 +325,13 @@ export default function Header() {
                     )}
                   </Link>
                   <div className="pt-4 border-t">
-                    <form onSubmit={handleSearch} className="mb-2">
+                    <form
+                      onSubmit={(e) => {
+                        handleSearch(e);
+                        handleMenuClose();
+                      }}
+                      className="mb-2"
+                    >
                       <div className="flex space-x-2">
                         <Input
                           type="text"
